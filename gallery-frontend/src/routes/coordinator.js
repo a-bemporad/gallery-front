@@ -1,19 +1,19 @@
 export const goToLogIn = (history) => {
-  history.pushState("/login");
+  history.push("/login");
 };
 
 export const goToSignUp = (history) => {
-  history.pushState("/signup");
+  history.push("/signup");
 };
 
 export const goToHome = (history) => {
-  history.pushState("/");
+  history.push("/");
 };
 
 export const goToImageDetails = (history, id) => {
-  history.pushState(`/image/${id}`);
+  history.push(`/image/${id}`);
 };
 
 export const goToAddImage = (history) => {
-  history.pushState("/add-image");
+  history.push("/add-image");
 };
