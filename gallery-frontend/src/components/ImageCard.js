@@ -1,131 +1,51 @@
+import { useDisclosure } from "@chakra-ui/hooks";
 import { Image } from "@chakra-ui/image";
-import { Box } from "@chakra-ui/layout";
-import { Link } from "@chakra-ui/layout";
-import { GridItem } from "@chakra-ui/layout";
-import { Grid } from "@chakra-ui/layout";
-import { Heading } from "@chakra-ui/layout";
-import { Text } from "@chakra-ui/layout";
-import { Flex } from "@chakra-ui/layout";
+import { Box, GridItem, Link, Flex, Text } from "@chakra-ui/layout";
 import React from "react";
+import ModalImageDetails from "./ModalImageDetails";
 
-const ImageCard = () => {
-  const mockArray = [
-    {
-      subtitle: "baobabbaobabbaobabbaoba",
-      author: "Kai",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Adansonia_grandidieri04.jpg/1200px-Adansonia_grandidieri04.jpg",
-      tags: ["tag1", "tag2", "tag3"],
-      collection: "árvores",
-    },
-    {
-      subtitle: "dragon tree",
-      author: "Ástrid",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/8/83/Socotra_dragon_tree.JPG",
-      tags: ["tag2", "tag4", "tag6"],
-      collection: "árvores",
-    },
-    {
-      subtitle: "jacarandá mimosifolia",
-      author: "Ástrid",
-      file:
-        "https://www.fazfacil.com.br/wp-content/uploads/2013/03/dscf7320-700x408.jpg",
-      tags: ["tag5"],
-      collection: "árvores",
-    },
-    {
-      subtitle: "baobabbaobabbaobabbaoba",
-      author: "Kai",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Adansonia_grandidieri04.jpg/1200px-Adansonia_grandidieri04.jpg",
-      tags: ["tag1", "tag2", "tag3"],
-      collection: "árvores",
-    },
-    {
-      subtitle: "dragon tree",
-      author: "Ástrid",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/8/83/Socotra_dragon_tree.JPG",
-      tags: ["tag2", "tag4", "tag6"],
-      collection: "árvores",
-    },
-    {
-      subtitle: "jacarandá mimosifolia",
-      author: "Ástrid",
-      file:
-        "https://www.fazfacil.com.br/wp-content/uploads/2013/03/dscf7320-700x408.jpg",
-      tags: ["tag5"],
-      collection: "árvores",
-    },
-    {
-      subtitle: "baobabbaobabbaobabbaoba",
-      author: "Kai",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Adansonia_grandidieri04.jpg/1200px-Adansonia_grandidieri04.jpg",
-      tags: ["tag1", "tag2", "tag3"],
-      collection: "árvores",
-    },
-    {
-      subtitle: "dragon tree",
-      author: "Ástrid",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/8/83/Socotra_dragon_tree.JPG",
-      tags: ["tag2", "tag4", "tag6"],
-      collection: "árvores",
-    },
-    {
-      subtitle: "jacarandá mimosifolia",
-      author: "Ástrid",
-      file:
-        "https://www.fazfacil.com.br/wp-content/uploads/2013/03/dscf7320-700x408.jpg",
-      tags: ["tag5"],
-      collection: "árvores",
-    },
-  ];
+const ImageCard = ({ id, subtitle, author, file, tags, collection }) => {
+  const mappedTags = tags.map((tag) => {
+    return <Link>{tag}</Link>;
+  });
+  const { onOpen } = useDisclosure();
   return (
-    <Grid w="80vw" mx="auto" my="3em" templateColumns="repeat(4, 1fr)" gap="4">
-      {mockArray.map((mockCard) => {
-        return (
-          <GridItem>
-            <Flex
-              as="article"
-              direction="column"
-              h="20em"
-              border="1px solid"
-              borderColor="palette1.4"
-              borderRadius="1em"
-              p="4px"
-            >
-              <Box w="100%" h="70%" marginBottom="2px">
-                <Image
-                  src={mockCard.file}
-                  w="100%"
-                  h="100%"
-                  objectFit="contain"
-                />
-              </Box>
-              <Flex direction="column" h="30%" p="4px">
-                <Heading as="h5" fontSize="lg">
-                  {mockCard.subtitle}
-                </Heading>
-                <Text p="0" lineHeight="1.5">
-                  {mockCard.author}
-                </Text>
-                <Text p="0" lineHeight="1.5">
-                  {mockCard.collection}
-                </Text>
-                <Flex justifyContent="space-evenly">
-                  {mockCard.tags.map((tag) => {
-                    return <Link>{tag}</Link>;
-                  })}
-                </Flex>
-              </Flex>
-            </Flex>
-          </GridItem>
-        );
-      })}
-    </Grid>
+    <GridItem>
+      <Flex
+        as="article"
+        key={id}
+        direction="column"
+        h="18em"
+        border="1px solid none"
+        bgColor="palette1.1"
+        borderRadius="1em"
+        p="4px"
+        color="palette2.3"
+        fontSize="lg"
+        _hover={{ bgColor: "palette2.5" }}
+      >
+        <Box w="100%" h="70%" marginBottom="2px">
+          <Box position="absolute" zIndex={2} h="17.5em" w="19%">
+            <ModalImageDetails
+              subtitle={subtitle}
+              author={author}
+              file={file}
+              tags={tags}
+              collection={collection}
+            />
+          </Box>
+          <Image src={file} w="100%" h="100%" objectFit="contain" />
+        </Box>
+        <Flex direction="column" h="30%" p="4px">
+          <Text as="h5" fontSize="xl">
+            {subtitle}
+          </Text>
+          <Text p="0" lineHeight="1.5">
+            {author}. <i>{collection}</i>
+          </Text>
+        </Flex>
+      </Flex>
+    </GridItem>
   );
 };
 

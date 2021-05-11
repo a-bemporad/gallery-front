@@ -9,7 +9,7 @@ import { goToHome, goToLogIn, goToSignUp } from "../routes/coordinator";
 const Header = () => {
   const history = useHistory();
   return (
-    <Flex bgColor="palette1.2" p="10px 20px" w="100vw" alignItems="center">
+    <Flex bgColor="palette1.2" p="10px 20px" w="100%" alignItems="center">
       <Image src={logo} h="60px" />
       <Flex alignItems="center" grow="1" p="8px" fontSize="1.8em">
         <Heading fontSize="1.5em">Serendipia</Heading>
