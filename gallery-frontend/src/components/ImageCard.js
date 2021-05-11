@@ -105,19 +105,21 @@ const ImageCard = () => {
                   objectFit="contain"
                 />
               </Box>
-              <Heading as="h5" fontSize="lg" overflowWrap="break-word">
-                {mockCard.subtitle}
-              </Heading>
-              <Text p="0" lineHeight="1.5">
-                {mockCard.author}
-              </Text>
-              <Text p="0" lineHeight="1.5">
-                {mockCard.collection}
-              </Text>
-              <Flex justifyContent="space-evenly">
-                {mockCard.tags.map((tag) => {
-                  return <Link>{tag}</Link>;
-                })}
+              <Flex direction="column" h="30%" p="4px">
+                <Heading as="h5" fontSize="lg">
+                  {mockCard.subtitle}
+                </Heading>
+                <Text p="0" lineHeight="1.5">
+                  {mockCard.author}
+                </Text>
+                <Text p="0" lineHeight="1.5">
+                  {mockCard.collection}
+                </Text>
+                <Flex justifyContent="space-evenly">
+                  {mockCard.tags.map((tag) => {
+                    return <Link>{tag}</Link>;
+                  })}
+                </Flex>
               </Flex>
             </Flex>
           </GridItem>
