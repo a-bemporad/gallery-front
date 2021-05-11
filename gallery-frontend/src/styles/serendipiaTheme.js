@@ -42,12 +42,23 @@ const serendipiaTheme = extendTheme({
     },
     Button: {
       variants: {
-        "call-to-action": {
+        callToAction: {
           w: "8em",
           h: "2em",
           bgColor: "palette2.5",
-          fontFamily: "IM F.ell Great Primer, serif",
+          fontFamily: "IM Fell Great Primer, serif",
           color: "palette2.3",
+          _hover: {
+            bgColor: "palette1.1",
+            borderColor: "none",
+          },
+        },
+        softAction: {
+          w: "8em",
+          h: "2em",
+          bgColor: "palette1.2",
+          fontFamily: "IM Fell Great Primer, serif",
+          color: "palette1.5",
           _hover: {
             bgColor: "palette1.1",
             borderColor: "none",
