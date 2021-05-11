@@ -6,7 +6,6 @@ import { Input } from "@chakra-ui/input";
 import { Flex } from "@chakra-ui/layout";
 import { Center } from "@chakra-ui/layout";
 import { useForm } from "react-hook-form";
-import { Text } from "@chakra-ui/layout";
 import { Heading } from "@chakra-ui/layout";
 
 const AddImage = () => {
@@ -27,7 +26,7 @@ const AddImage = () => {
         bgColor="palette2.3"
         p="3em"
       >
-        <Heading fontSize="2xl" textAlign="center">
+        <Heading fontSize="2xl" textAlign="center" marginBottom="1em">
           Upload your image
         </Heading>
         <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
