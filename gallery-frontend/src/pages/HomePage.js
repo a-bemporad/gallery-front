@@ -1,6 +1,5 @@
 import React from "react";
-import { Flex, Grid, GridItem, SimpleGrid } from "@chakra-ui/layout";
-import UserCard from "../components/UserCard";
+import { Grid } from "@chakra-ui/layout";
 import ImageCard from "../components/ImageCard";
 
 const Home = () => {

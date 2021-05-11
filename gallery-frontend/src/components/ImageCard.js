@@ -1,14 +1,9 @@
-import { useDisclosure } from "@chakra-ui/hooks";
 import { Image } from "@chakra-ui/image";
-import { Box, GridItem, Link, Flex, Text } from "@chakra-ui/layout";
+import { Box, GridItem, Flex, Text } from "@chakra-ui/layout";
 import React from "react";
 import ModalImageDetails from "./ModalImageDetails";
 
 const ImageCard = ({ id, subtitle, author, file, tags, collection }) => {
-  const mappedTags = tags.map((tag) => {
-    return <Link>{tag}</Link>;
-  });
-  const { onOpen } = useDisclosure();
   return (
     <GridItem>
       <Flex

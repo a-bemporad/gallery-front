@@ -16,8 +16,12 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
   //aqui o data é o valor do input controlado
-  const onSubmit = (data) => console.log(data);
-
+  const onSubmit = (data, event) => {
+    event.preventDefault();
+    localStorage.setItem("token", "token");
+    //signUpRequest(data, history);
+    console.log(data);
+  };
   const [show, setShow] = useState(false);
   const handleClick = () => {
     setShow(!show);

@@ -6,8 +6,17 @@ import { Button } from "@chakra-ui/button";
 import { useHistory } from "react-router-dom";
 import { goToHome, goToLogIn, goToSignUp } from "../routes/coordinator";
 
-const Header = () => {
+const Header = ({ logged, setLogged }) => {
   const history = useHistory();
+  const onClickLog = () => {
+    if (logged === "Log Out") {
+      localStorage.removeItem("token");
+      setLogged("Log In");
+      goToLogIn(history);
+    } else {
+      goToLogIn(history);
+    }
+  };
   return (
     <Flex bgColor="palette1.2" p="10px 20px" w="100%" alignItems="center">
       <Image src={logo} h="60px" />
@@ -23,21 +32,26 @@ const Header = () => {
         >
           Home
         </Button>
+        {logged === "Log Out" ? (
+          <></>
+        ) : (
+          <Button
+            variant="callToAction"
+            _focus={{ border: "1px solid palette1.2" }}
+            mx="2px"
+            onClick={() => goToSignUp(history)}
+          >
+            Sign Up
+          </Button>
+        )}
+
         <Button
           variant="callToAction"
           _focus={{ border: "1px solid palette1.2" }}
           mx="2px"
-          onClick={() => goToSignUp(history)}
+          onClick={onClickLog}
         >
-          Sign Up
-        </Button>
-        <Button
-          variant="callToAction"
-          _focus={{ border: "1px solid palette1.2" }}
-          mx="2px"
-          onClick={() => goToLogIn(history)}
-        >
-          Log In
+          {logged}
         </Button>
       </Flex>
     </Flex>

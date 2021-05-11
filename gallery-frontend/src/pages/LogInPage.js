@@ -11,7 +11,6 @@ import { Center } from "@chakra-ui/layout";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link as ReactRouterLink, useHistory } from "react-router-dom";
-import { loginRequest } from "../requests/logInRequest";
 
 const LogIn = () => {
   const {
@@ -23,7 +22,8 @@ const LogIn = () => {
   //aqui o data é o valor do input controlado
   const onSubmit = (data, event) => {
     event.preventDefault();
-    loginRequest(data, history);
+    localStorage.setItem("token", "token");
+    //loginRequest(data, history);
     console.log(data);
   };
 
