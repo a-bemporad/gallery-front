@@ -19,7 +19,11 @@ import {
 const ModalImageDetails = ({ subtitle, author, file, tags, collection }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const mappedTags = tags.map((tag) => {
-    return <Link px="0.5em">{tag}</Link>;
+    return (
+      <Link key={tag} px="0.5em">
+        {tag}
+      </Link>
+    );
   });
   return (
     <>

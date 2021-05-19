@@ -9,8 +9,7 @@ const Home = () => {
       id: 1,
       subtitle: "adansonia",
       author: "Kai",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Adansonia_grandidieri04.jpg/1200px-Adansonia_grandidieri04.jpg",
+      file: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Adansonia_grandidieri04.jpg/1200px-Adansonia_grandidieri04.jpg",
       tags: ["tag1", "tag2", "tag3"],
       collection: "árvores",
     },
@@ -18,8 +17,7 @@ const Home = () => {
       id: 2,
       subtitle: "dragon tree",
       author: "Ástrid",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/8/83/Socotra_dragon_tree.JPG",
+      file: "https://upload.wikimedia.org/wikipedia/commons/8/83/Socotra_dragon_tree.JPG",
       tags: ["tag2", "tag4", "tag6"],
       collection: "árvores",
     },
@@ -27,8 +25,7 @@ const Home = () => {
       id: 3,
       subtitle: "jacarandá mimosifolia",
       author: "Ástrid",
-      file:
-        "https://www.fazfacil.com.br/wp-content/uploads/2013/03/dscf7320-700x408.jpg",
+      file: "https://www.fazfacil.com.br/wp-content/uploads/2013/03/dscf7320-700x408.jpg",
       tags: ["tag5"],
       collection: "árvores",
     },
@@ -36,8 +33,7 @@ const Home = () => {
       id: 4,
       subtitle: "adansonia",
       author: "Kai",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Adansonia_grandidieri04.jpg/1200px-Adansonia_grandidieri04.jpg",
+      file: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Adansonia_grandidieri04.jpg/1200px-Adansonia_grandidieri04.jpg",
       tags: ["tag1", "tag2", "tag3"],
       collection: "árvores",
     },
@@ -45,8 +41,7 @@ const Home = () => {
       id: 5,
       subtitle: "dragon tree",
       author: "Ástrid",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/8/83/Socotra_dragon_tree.JPG",
+      file: "https://upload.wikimedia.org/wikipedia/commons/8/83/Socotra_dragon_tree.JPG",
       tags: ["tag2", "tag4", "tag6"],
       collection: "árvores",
     },
@@ -54,8 +49,7 @@ const Home = () => {
       id: 6,
       subtitle: "jacarandá mimosifolia",
       author: "Ástrid",
-      file:
-        "https://www.fazfacil.com.br/wp-content/uploads/2013/03/dscf7320-700x408.jpg",
+      file: "https://www.fazfacil.com.br/wp-content/uploads/2013/03/dscf7320-700x408.jpg",
       tags: ["tag5"],
       collection: "árvores",
     },
@@ -63,8 +57,7 @@ const Home = () => {
       id: 7,
       subtitle: "baobabbaobabbaobabbaoba",
       author: "Kai",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Adansonia_grandidieri04.jpg/1200px-Adansonia_grandidieri04.jpg",
+      file: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Adansonia_grandidieri04.jpg/1200px-Adansonia_grandidieri04.jpg",
       tags: ["tag1", "tag2", "tag3"],
       collection: "árvores",
     },
@@ -72,8 +65,7 @@ const Home = () => {
       id: 8,
       subtitle: "dragon tree",
       author: "Ástrid",
-      file:
-        "https://upload.wikimedia.org/wikipedia/commons/8/83/Socotra_dragon_tree.JPG",
+      file: "https://upload.wikimedia.org/wikipedia/commons/8/83/Socotra_dragon_tree.JPG",
       tags: ["tag2", "tag4", "tag6"],
       collection: "árvores",
     },
@@ -81,8 +73,7 @@ const Home = () => {
       id: 9,
       subtitle: "jacarandá mimosifolia",
       author: "Ástrid",
-      file:
-        "https://www.fazfacil.com.br/wp-content/uploads/2013/03/dscf7320-700x408.jpg",
+      file: "https://www.fazfacil.com.br/wp-content/uploads/2013/03/dscf7320-700x408.jpg",
       tags: ["tag5"],
       collection: "árvores",
     },
@@ -91,6 +82,7 @@ const Home = () => {
     return (
       <ImageCard
         as="GridItem"
+        key={image.id}
         id={image.id}
         subtitle={image.subtitle}
         author={image.author}

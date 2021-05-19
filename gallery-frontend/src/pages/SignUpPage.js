@@ -6,20 +6,24 @@ import { InputRightElement } from "@chakra-ui/input";
 import { Input } from "@chakra-ui/input";
 import { Flex } from "@chakra-ui/layout";
 import { Center } from "@chakra-ui/layout";
+import { useToast } from "@chakra-ui/toast";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router";
+import { signUpRequest } from "../requests/signUpRequest";
 
 const SignUp = () => {
+  const toast = useToast();
+  const history = useHistory();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  //aqui o data é o valor do input controlado
   const onSubmit = (data, event) => {
     event.preventDefault();
     localStorage.setItem("token", "token");
-    //signUpRequest(data, history);
+    signUpRequest(data, history, toast);
     console.log(data);
   };
   const [show, setShow] = useState(false);
