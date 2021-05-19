@@ -7,14 +7,14 @@ import ImageDetails from "../pages/ImageDetailsPage";
 import LogIn from "../pages/LogInPage";
 import SignUp from "../pages/SignUpPage";
 
-const Router = () => {
+const Router = ({ logged, setLogged }) => {
   return (
     <Switch>
       <Route exact path="/login">
-        <LogIn />
+        <LogIn logged={logged} setLogged={setLogged} />
       </Route>
       <Route exact path="/signup">
-        <SignUp />
+        <SignUp logged={logged} setLogged={setLogged} />
       </Route>
       <Route exact path="/">
         <Home />
